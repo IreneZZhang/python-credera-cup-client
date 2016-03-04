@@ -5,12 +5,6 @@ import sys
 import json
 
 
-fuel = {
-        "last": 0,
-        "current": 0,
-        "diff": []
-        }
-
 def get_status(code):
     if code == 1000:
         return "Finished"
