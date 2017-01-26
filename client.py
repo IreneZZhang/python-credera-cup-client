@@ -45,6 +45,8 @@ def on_close(ws):
 
 def on_open(ws):
     print "Connection established."
+    response = json.dumps({ "instruction": "beginRace" })
+    ws.send(response)
 
 
 if __name__ == "__main__":
@@ -52,8 +54,8 @@ if __name__ == "__main__":
         print "Usage: " + sys.argv[0] + " <server> <token>"
         sys.exit(1)
 
-    print "Attempting websocket connection to ws://{}".format(sys.argv[1])
-    ws = websocket.WebSocketApp("ws://" + sys.argv[1],
+    print "Attempting websocket connection to {}".format(sys.argv[1])
+    ws = websocket.WebSocketApp(sys.argv[1],
                                 header = ["X-Credera-Auth-Token: " + sys.argv[2]],
                                 on_message = on_message,
                                 on_error = on_error,

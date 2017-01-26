@@ -9,4 +9,4 @@ for an account to receive a token.
 
 There are two required parameters: URL for the websocket to connect to and your user token.
 
-    python client.py play.crederacup.com/begin/race/1 <user-token>
+    python client.py wss://play.crederacup.com/season/I/practice <user-token>
