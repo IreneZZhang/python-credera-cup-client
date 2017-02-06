@@ -32,7 +32,7 @@ def on_message(ws, msg):
         ws.send(response)
     elif "raceResult" in data:
         print "Race complete!"
-        print "Level {}".format(data["raceResult"]["level"])
+        print "Level {}".format(data["raceResult"]["circuit"])
         print "Status: {}".format(get_status(data["raceResult"]["status"]))
         print "Total time: {}".format(data["raceResult"]["totalTime"])
         ws.close()
